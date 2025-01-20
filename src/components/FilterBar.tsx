@@ -3,7 +3,7 @@ import { View, TouchableOpacity, Text, StyleSheet } from 'react-native';
 
 import {Filters} from "../hooks/useTasks";
 import {GRAY, GREEN, WHITE} from "../consts/Colors";
-import {RADIUS_MEDIUM, SPACE_MEDIUM, SPACE_SMALL} from "./Dimensions";
+import {RADIUS_MEDIUM, SPACE_MEDIUM, SPACE_SMALL} from "../consts/Dimensions";
 
 interface FilterBarProps {
     filter: Filters;

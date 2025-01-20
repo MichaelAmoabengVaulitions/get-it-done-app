@@ -5,7 +5,7 @@ import TaskItem from '../components/TaskItem';
 import FilterBar from '../components/FilterBar';
 import useTasks, {Filters, TaskActionType} from '../hooks/useTasks';
 import {GRAY, WHITE} from "../consts/Colors";
-import {RADIUS_LARGE, SPACE_LARGE, SPACE_MEDIUM, SPACE_SMALL} from "../components/Dimensions";
+import {RADIUS_LARGE, SPACE_LARGE, SPACE_MEDIUM, SPACE_SMALL} from "../consts/Dimensions";
 
 const TaskListScreen: React.FC = () => {
     const [state, dispatch] = useTasks();

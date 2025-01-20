@@ -4,7 +4,7 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 import Animated, { withTiming, useSharedValue, useAnimatedStyle, withSpring } from 'react-native-reanimated';
 
 import {Task} from "../hooks/useTasks";
-import {RADIUS_SMALL, SPACE_MEDIUM, SPACE_SMALL} from "./Dimensions";
+import {RADIUS_SMALL, SPACE_MEDIUM, SPACE_SMALL} from "../consts/Dimensions";
 import {GRAY, GREEN, LIGHT_GRAY, OFF_WHITE, RED} from "../consts/Colors";
 
 interface TaskItemProps {
