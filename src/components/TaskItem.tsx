@@ -3,7 +3,9 @@ import { View, Text, TouchableOpacity, TextInput, StyleSheet , Alert} from 'reac
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import Animated, { withTiming, useSharedValue, useAnimatedStyle, withSpring } from 'react-native-reanimated';
 
-import { Task } from '../types';
+import {Task} from "../hooks/useTasks";
+import {RADIUS_SMALL, SPACE_MEDIUM, SPACE_SMALL} from "./Dimensions";
+import {GRAY, GREEN, LIGHT_GRAY, OFF_WHITE, RED} from "../consts/Colors";
 
 interface TaskItemProps {
     task: Task;
@@ -86,11 +88,22 @@ const TaskItem: React.FC<TaskItemProps> = ({ task, onToggle, onDelete, onUpdate 
                 )}
             </TouchableOpacity>
             <View style={styles.actions}>
-                <TouchableOpacity onPress={() => setIsEditing(true)}>
-                    <Icon name="edit" size={20} color="#4CAF50" />
+                <TouchableOpacity
+                    onPress={() => setIsEditing(true)}
+                    style={styles.editButton}
+                >
+                    <Icon
+                        name="edit"
+                        size={20}
+                        color={GREEN}
+                    />
                 </TouchableOpacity>
                 <TouchableOpacity onPress={handleDelete}>
-                    <Icon name="delete" size={20} color="red" />
+                    <Icon
+                        name="delete"
+                        size={20}
+                        color={RED}
+                    />
                 </TouchableOpacity>
             </View>
         </Animated.View>
@@ -101,10 +114,10 @@ const styles = StyleSheet.create({
     taskContainer: {
         flexDirection: 'row',
         justifyContent: 'space-between',
-        padding: 10,
-        marginBottom: 8,
-        borderRadius: 10,
-        backgroundColor: '#f9f9f9',
+        padding: SPACE_MEDIUM,
+        marginBottom: SPACE_SMALL,
+        borderRadius: RADIUS_SMALL,
+        backgroundColor: OFF_WHITE,
 
     },
     taskTextContainer: {
@@ -115,17 +128,20 @@ const styles = StyleSheet.create({
     },
     completed: {
         textDecorationLine: 'line-through',
-        color: '#aaa'
+        color: LIGHT_GRAY
     },
     editInput: {
         fontSize: 16,
         borderBottomWidth: 1,
-        borderBottomColor: '#ddd'
+        borderBottomColor: GRAY
     },
     actions: {
         flexDirection: 'row',
         alignItems: 'center'
     },
+    editButton: {
+        marginRight: SPACE_SMALL
+    }
 });
 
 export default TaskItem;

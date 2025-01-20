@@ -1,6 +1,9 @@
 import React from 'react';
 import { View, TouchableOpacity, Text, StyleSheet } from 'react-native';
+
 import {Filters} from "../hooks/useTasks";
+import {GRAY, GREEN, WHITE} from "../consts/Colors";
+import {RADIUS_MEDIUM, SPACE_MEDIUM, SPACE_SMALL} from "./Dimensions";
 
 interface FilterBarProps {
     filter: Filters;
@@ -30,17 +33,17 @@ const styles = StyleSheet.create({
         marginBottom: 26
     },
     button: {
-        paddingHorizontal: 16,
-        paddingVertical: 8,
-        borderRadius: 20,
-        backgroundColor: '#ddd'
+        paddingHorizontal: SPACE_MEDIUM,
+        paddingVertical: SPACE_SMALL,
+        borderRadius: RADIUS_MEDIUM,
+        backgroundColor: GRAY
     },
     activeButton: {
-        backgroundColor: '#4CAF50'
+        backgroundColor: GREEN
     },
     buttonText: {
         fontWeight: 'bold',
-        color: '#fff'
+        color: WHITE
     },
 });
 

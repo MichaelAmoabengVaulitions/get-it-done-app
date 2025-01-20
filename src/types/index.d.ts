@@ -1,5 +1,1 @@
-export interface Task {
-    id: string;
-    title: string;
-    completed: boolean;
-}
+declare module "react-native-vector-icons/MaterialIcons"

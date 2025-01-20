@@ -1,6 +1,11 @@
 import { useEffect, useReducer } from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { Task } from '../types';
+
+export interface Task {
+    id: string;
+    title: string;
+    completed: boolean;
+}
 
 export enum Filters {
     ALL = 'all',

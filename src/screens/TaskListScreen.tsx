@@ -4,6 +4,8 @@ import { View, TextInput, FlatList, StyleSheet, Text } from 'react-native';
 import TaskItem from '../components/TaskItem';
 import FilterBar from '../components/FilterBar';
 import useTasks, {Filters, TaskActionType} from '../hooks/useTasks';
+import {GRAY, WHITE} from "../consts/Colors";
+import {RADIUS_LARGE, SPACE_LARGE, SPACE_MEDIUM, SPACE_SMALL} from "../components/Dimensions";
 
 const TaskListScreen: React.FC = () => {
     const [state, dispatch] = useTasks();
@@ -60,25 +62,25 @@ const TaskListScreen: React.FC = () => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        padding: 16,
-        backgroundColor: 'white',
+        padding: SPACE_MEDIUM,
+        backgroundColor: WHITE,
     },
     title: {
-        fontSize: 24,
+        fontSize: SPACE_LARGE,
         fontWeight: 'bold',
         marginBottom: 26,
         textAlign: 'center',
     },
     input: {
         borderWidth: 1,
-        borderColor: '#ddd',
-        padding: 8,
-        borderRadius: 30,
-        marginBottom: 16,
+        borderColor: GRAY,
+        padding: SPACE_SMALL,
+        borderRadius: RADIUS_LARGE,
+        marginBottom: SPACE_MEDIUM,
         height: 40
     },
     taskList: {
-        paddingBottom: 16
+        paddingBottom: SPACE_MEDIUM
     },
 });
 
