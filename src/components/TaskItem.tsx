@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, TouchableOpacity, TextInput, StyleSheet , Alert} from 'react-native';
-import Icon from 'react-native-vector-icons/MaterialIcons';
+import Ionicons from '@expo/vector-icons/Ionicons';
 import Animated, { withTiming, useSharedValue, useAnimatedStyle, withSpring } from 'react-native-reanimated';
 
 import {Task} from "../hooks/useTasks";
@@ -92,15 +92,15 @@ const TaskItem: React.FC<TaskItemProps> = ({ task, onToggle, onDelete, onUpdate 
                     onPress={() => setIsEditing(true)}
                     style={styles.editButton}
                 >
-                    <Icon
-                        name="edit"
+                    <Ionicons
+                        name="create"
                         size={20}
                         color={GREEN}
                     />
                 </TouchableOpacity>
                 <TouchableOpacity onPress={handleDelete}>
-                    <Icon
-                        name="delete"
+                    <Ionicons
+                        name="trash"
                         size={20}
                         color={RED}
                     />
