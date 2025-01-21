@@ -67,7 +67,7 @@ const TaskItem: React.FC<TaskItemProps> = ({ task, onToggle, onDelete, onUpdate 
         transform: [
             { translateY: translateY.value },
             { scale: scale.value },
-        ],
+        ] as const,
     }));
 
     return (

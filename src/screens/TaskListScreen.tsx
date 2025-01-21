@@ -1,11 +1,19 @@
 import React, { useState } from 'react';
-import { View, TextInput, FlatList, StyleSheet, Text } from 'react-native';
+import {
+    View,
+    TextInput,
+    FlatList,
+    StyleSheet,
+    Text,
+    KeyboardAvoidingView,
+} from 'react-native';
 
 import TaskItem from '../components/TaskItem';
 import FilterBar from '../components/FilterBar';
 import useTasks, {Filters, TaskActionType} from '../hooks/useTasks';
 import {GRAY, WHITE} from "../consts/Colors";
 import {RADIUS_LARGE, SPACE_LARGE, SPACE_MEDIUM, SPACE_SMALL} from "../consts/Dimensions";
+import {IS_IOS} from "../consts/Device";
 
 const TaskListScreen: React.FC = () => {
     const [state, dispatch] = useTasks();
@@ -28,7 +36,21 @@ const TaskListScreen: React.FC = () => {
         }
     };
 
+    const renderItem = ({ item }) => (
+        <TaskItem
+            task={item}
+            onToggle={() => dispatch({ type: TaskActionType.TOGGLE_TASK, payload: item.id })}
+            onDelete={() => dispatch({ type: TaskActionType.DELETE_TASK, payload: item.id })}
+            onUpdate={(title) => dispatch({ type: TaskActionType.UPDATE_TASK, payload: { id: item.id, title } })}
+        />
+    );
+
     return (
+        <KeyboardAvoidingView
+            style={styles.keyboardContainer}
+            behavior={IS_IOS ? 'padding' : 'height'}
+        >
+
         <View style={styles.container}>
             <Text style={styles.title}>Get it Done</Text>
             <TextInput
@@ -45,17 +67,14 @@ const TaskListScreen: React.FC = () => {
             <FlatList
                 data={filteredTasks}
                 keyExtractor={(item) => item.id}
-                renderItem={({ item }) => (
-                    <TaskItem
-                        task={item}
-                        onToggle={() => dispatch({ type: TaskActionType.TOGGLE_TASK, payload: item.id })}
-                        onDelete={() => dispatch({ type: TaskActionType.DELETE_TASK, payload: item.id })}
-                        onUpdate={(title) => dispatch({ type: TaskActionType.UPDATE_TASK, payload: { id: item.id, title } })}
-                    />
-                )}
+                renderItem={renderItem}
                 contentContainerStyle={styles.taskList}
+                removeClippedSubviews={false}
+                windowSize={5}
             />
         </View>
+
+        </KeyboardAvoidingView>
     );
 };
 
@@ -64,6 +83,9 @@ const styles = StyleSheet.create({
         flex: 1,
         padding: SPACE_MEDIUM,
         backgroundColor: WHITE,
+    },
+    keyboardContainer: {
+        flex: 1
     },
     title: {
         fontSize: SPACE_LARGE,
