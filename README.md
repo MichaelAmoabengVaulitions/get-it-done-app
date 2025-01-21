@@ -109,12 +109,6 @@ get-it-done-app/
   ```bash
   npm run android
   ```
-
-- **Lint** your code:
-  ```bash
-  npm run lint
-  ```
-
 ---
 
 ## How to Use the App
