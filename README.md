@@ -14,7 +14,7 @@ A robust and simple To-Do List app built using React Native with TypeScript. Thi
 - **Persistence**: Tasks are saved to local storage, ensuring they persist across app restarts.
 - **Filter Tasks**: View tasks based on their status (All, Completed, or Uncompleted).
   
-https://github.com/user-attachments/assets/180491aa-0625-4652-a8bc-5ffbcbb788db
+https://github.com/user-attachments/assets/7d257b8a-beb5-466d-b522-417b809c9db4
 
 ---
 
