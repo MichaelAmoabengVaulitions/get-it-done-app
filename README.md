@@ -17,7 +17,10 @@ A robust and simple To-Do List app built using React Native with TypeScript. Thi
 https://github.com/user-attachments/assets/7d257b8a-beb5-466d-b522-417b809c9db4
 
 
-https://github.com/user-attachments/assets/766a81bb-df73-4442-a43b-c92b16866e2d
+
+https://github.com/user-attachments/assets/0743de56-9e8c-4be4-bd7c-4c4f81d2158c
+
+
 
 
 ---
