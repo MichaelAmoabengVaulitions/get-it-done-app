@@ -149,7 +149,10 @@ get-it-done-app/
   ```bash
   expo start -c
   ```
-
+- Lint your code:
+  ```bash
+  npm run lint
+  ```
 ---
 
 ## License
