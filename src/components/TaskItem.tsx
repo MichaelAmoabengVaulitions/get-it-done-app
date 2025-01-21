@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { View, Text, TouchableOpacity, TextInput, StyleSheet , Alert} from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import Animated, { withTiming, useSharedValue, useAnimatedStyle, withSpring } from 'react-native-reanimated';
@@ -23,7 +23,7 @@ const TaskItem: React.FC<TaskItemProps> = ({ task, onToggle, onDelete, onUpdate 
     const translateY = useSharedValue(20);
 
 
-    React.useEffect(() => {
+    useEffect(() => {
         opacity.value = withTiming(1, { duration: 300 });
         translateY.value = withSpring(0, { damping: 15 });
     }, []);
